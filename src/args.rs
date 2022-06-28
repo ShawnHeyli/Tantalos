@@ -12,5 +12,21 @@ pub mod args {
         /// Path of the output file
         #[clap(short, long, parse(from_os_str), default_value = "./gitGraph.mmd")]
         pub output: PathBuf,
+
+        /// Theme to use
+        #[clap(short, long, value_parser, default_value = "base")]
+        pub theme: String,
+
+        /// Show branches names
+        #[clap(long, value_parser, default_value = "true")]
+        pub show_branches: bool,
+
+        /// Rotate commit label
+        #[clap(long, value_parser, default_value = "true")]
+        pub rotate_commit_label: bool,
+
+        /// Show commit label
+        #[clap(long, value_parser, default_value = "true")]
+        pub show_commit_label: bool,
     }
 }
