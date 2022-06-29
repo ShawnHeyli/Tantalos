@@ -31,9 +31,9 @@ pub mod config {
     }
 
     impl Config {
-        pub fn new(args: Args) -> Config {
+        pub fn new(args: &Args) -> Config {
             let init = Init {
-                theme: args.theme,
+                theme: args.theme.to_string(),
                 gitGraph: GitGraph {
                     showBranches: args.show_branches,
                     rotateCommitLabel: args.rotate_commit_label,
